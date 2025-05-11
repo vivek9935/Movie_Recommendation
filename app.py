@@ -46,7 +46,7 @@ def get_recommendations(df, similarity_matrix, movie_name, num_recommendations=1
 def main():
     st.title("🎬 Movie Recommender in Colab")
 
-    filepath = '/content/movies.xlsx'
+    filepath = 'movies.xlsx'
     try:
         df = load_data(filepath)
         similarity_matrix = compute_similarity(df)
