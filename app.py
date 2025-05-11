@@ -13,8 +13,10 @@ def load_data(filepath):
     df = pd.read_excel(filepath)
     selected_features = ['genres', 'keywords', 'tagline', 'cast', 'director']
     df[selected_features] = df[selected_features].fillna('')
-    tqdm.pandas(desc="Combining features")
+    
+    tqdm.pandas(desc="Combining features")  # This enables the progress bar in progress_apply
     df['combined_features'] = df[selected_features].progress_apply(lambda row: ' '.join(row), axis=1)
+    
     return df
 
 @st.cache_data
