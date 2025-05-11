@@ -1,4 +1,3 @@
-%%writefile app.py
 import pandas as pd
 import logging
 from tqdm import tqdm
